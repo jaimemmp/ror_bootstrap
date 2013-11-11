@@ -6,5 +6,6 @@ FactoryGirl.define do
     duration 1
     synopsis "SynopisText"
     year 1
+    categories "MyCategories"
   end
 end
