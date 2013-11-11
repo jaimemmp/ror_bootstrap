@@ -5,5 +5,6 @@ FactoryGirl.define do
     title "MyString"
     duration 1
     synopsis "SynopisText"
+    year 1
   end
 end
