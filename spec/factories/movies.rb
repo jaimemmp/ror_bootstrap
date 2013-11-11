@@ -4,5 +4,6 @@ FactoryGirl.define do
   factory :movie do
     title "MyString"
     duration 1
+    synopsis "SynopisText"
   end
 end
