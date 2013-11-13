@@ -51,15 +51,15 @@ class MoviesController < ApplicationController
     end
   end
 
-  # DELETE /movies/1
-  # DELETE /movies/1.json
-  # def destroy
-  #   @movie.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to movies_url }
-  #     format.json { head :no_content }
-  #   end
-  # end
+  #DELETE /movies/1
+  #DELETE /movies/1.json
+  def destroy
+    @movie.destroy
+    respond_to do |format|
+      format.html { redirect_to movies_path }
+      format.json { head :no_content }
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

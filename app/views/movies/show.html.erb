@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Movie info: </h1>
 <p>
   <strong>Title:</strong>
   <%= @movie.title %>
@@ -25,17 +26,25 @@
   <%= @movie.categories %>
 </p>
 
+<%= link_to 'Edit', edit_movie_path(@movie), class: "btn btn-small btn-info" %>
+<%= link_to 'Back', movies_path, class: "btn btn-small btn-info" %>
+
 <p>
-  <strong>Comments:</strong>
-  <hr>
-  <% @movie.comments.each do |comment| -%>
-    <p>
-        <%= comment.body %>
-        <br><%= comment.author %>
-        <hr>
-    </p>
-<% end -%>
+  <h2>People:</h2>
+  
+  <%= render 'people_table' %>
+
+<%= link_to 'New person', new_movie_person_path(@movie[:id]), class: "btn btn-small btn-success" %>
+
 </p>
 
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<p>
+  <h2>Comments:</h2>
+  
+  <%= render 'comments_table' %>
+
+  
+
+<%= link_to 'New Comment', new_movie_comment_path(@movie[:id]), class: "btn btn-small btn-success" %>
+
+</p>

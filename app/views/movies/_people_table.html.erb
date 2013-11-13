@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead>
+      <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movie.people.each do |person| -%>
+
+          <tr>
+            <td class="col-md-5">
+              <%= person.name %>
+            </td>
+            <td class="col-md-5">
+              <%= person.role %>
+            </td>
+            <td class="col-md-1"><%= link_to 'Edit', edit_person_path(person), class: "btn btn-small btn-info sm-width" %></td>
+            <td class="col-md-1"><%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-small btn-danger sm-width" %>
+            </td>
+          </tr>
+      <% end -%>
+  </tbody>
+<table>

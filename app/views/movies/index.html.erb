@@ -8,27 +8,23 @@
       <th>Synopsis</th>
       <th>Year</th>
       <th>Categories</th>
-      <th>First Comment</th>
       <th></th>
       <th></th>
       <th></th>
-      <!-- <th></th> -->
     </tr>
   </thead>
 
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.duration %></td>
-        <td><%= movie.synopsis %></td>
-        <td><%= movie.year %></td>
-        <td><%= movie.categories %></td>
-        <td><%= movie.comments.first.try(:body) %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Comments', movie_comments_path(movie) %></td>
-        <!-- <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <td class="col-md-2"><%= movie.title %></td>
+        <td class="col-md-1"><%= movie.duration %></td>
+        <td class="col-md-2"><%= movie.synopsis %></td>
+        <td class="col-md-1"><%= movie.year %></td>
+        <td class="col-md-1"><%= movie.categories %></td>
+        <td class="col-md-1"><%= link_to 'Show', movie, class: "btn btn-small btn-success sm-width" %></td>
+        <td class="col-md-1"><%= link_to 'Edit', edit_movie_path(movie), class: "btn btn-small btn-info sm-width" %></td>
+        <td class="col-md-1"><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-small btn-danger sm-width" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Movie', new_movie_path %>
+<%= link_to 'New Movie', new_movie_path, class: "btn btn-small btn-success" %>

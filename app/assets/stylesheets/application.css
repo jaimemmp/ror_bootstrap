@@ -12,3 +12,12 @@
  *= require bootstrap.min
  *= require_tree .
  */
+ a.btn:visited{
+    color: white;
+}
+
+td{
+    vertical-align: middle !important;
+}
+
+.sm-width{width: 100%}
