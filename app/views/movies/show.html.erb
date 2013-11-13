@@ -25,5 +25,17 @@
   <%= @movie.categories %>
 </p>
 
+<p>
+  <strong>Comments:</strong>
+  <hr>
+  <% @movie.comments.each do |comment| -%>
+    <p>
+        <%= comment.body %>
+        <br><%= comment.author %>
+        <hr>
+    </p>
+<% end -%>
+</p>
+
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>

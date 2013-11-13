@@ -8,6 +8,8 @@
       <th>Synopsis</th>
       <th>Year</th>
       <th>Categories</th>
+      <th>First Comment</th>
+      <th></th>
       <th></th>
       <th></th>
       <!-- <th></th> -->
@@ -22,8 +24,10 @@
         <td><%= movie.synopsis %></td>
         <td><%= movie.year %></td>
         <td><%= movie.categories %></td>
+        <td><%= movie.comments.first.try(:body) %></td>
         <td><%= link_to 'Show', movie %></td>
         <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+        <td><%= link_to 'Comments', movie_comments_path(movie) %></td>
         <!-- <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>

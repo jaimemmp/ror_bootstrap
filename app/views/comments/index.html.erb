@@ -1,0 +1,24 @@
+<h1>Listing Comments</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Author</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.try(:body) %></td>
+        <td><%= comment.try(:author) %></td>
+        <td>
+          <%= link_to 'Edit Comment', edit_comment_path(comment[:id]) %>
+        </td>
+      <tr>
+    <% end %>
+  </tbody>
+<table>
+
+<%= link_to 'New Comment', new_movie_comment_path(@movie[:id]) %>
